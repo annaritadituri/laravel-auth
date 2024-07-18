@@ -10,6 +10,7 @@
             @foreach ($projects as $project)
                 <li>
                     <a href="{{ route('admin.projects.show', $project) }}">{{ $project['title'] }}</a>
+                    <a class="btn btn-primary" href="{{ route('admin.projects.edit', $project) }}" as="button">Modifica</a>
                 </li>
             @endforeach
         </ul>

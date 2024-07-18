@@ -25,7 +25,7 @@ class StoreProjectRequest extends FormRequest
             
             'title' => 'required|min:5|string',
             'description' => 'string|nullable',
-            'start_date' => 'date_format:YYYY-MM-DD',
+            'start_date' => 'date',
         
         ];
     }
