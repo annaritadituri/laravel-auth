@@ -5,6 +5,7 @@
     <div class="container">
 
         <h1 class="text-center">All Projects</h1>
+        <a class="btn btn-primary" href="{{ route('admin.projects.create') }}" as="button">Crea nuovo progetto</a>
         <ul>
             @foreach ($projects as $project)
                 <li>
@@ -12,7 +13,7 @@
                 </li>
             @endforeach
         </ul>
-        
+
     </div>
     
 @endsection
