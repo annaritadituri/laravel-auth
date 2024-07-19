@@ -17,6 +17,7 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->date('start_date');
             $table->boolean('in_progress')->default(0);
+            $table->string('slug');
             $table->timestamps();
         });
     }
