@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use App\Models\Project;
+use Illuminate\Support\Str;
 
 class ProjectController extends Controller
 {
@@ -40,11 +41,12 @@ class ProjectController extends Controller
         $project->title = $data['title'];
         $project->description = $data['description'];
         $project->start_date = $data['start_date'];
+        $project->slug = Str::of($project->title)->slug();
         $project->in_progress = $data['in_progress'];
 
         $project->save();
 
-        return redirect()->route('admin.projects.index');
+        return redirect()->route('admin.projects.index')->with('status', 'Progetto creato');
 
     }
 
@@ -71,8 +73,10 @@ class ProjectController extends Controller
     {
         
         $data = $request->validated();
+        $slug = Str::of($data['title'])->slug();
+        $project->slug = $slug;
         $project->update($data);
-        return redirect()->route('admin.projects.show', $project);
+        return redirect()->route('admin.projects.show', $project)->with('status', 'Info progetto aggiornate');
 
     }
 

@@ -64,8 +64,21 @@
                     </div>
                 @endif
             </div>
+            <span>In Progress</span>
+            <div class="mb-3">
+                <input class="form-check-input" type="radio" name="in_progress" id="flexRadioDefault1" value="1">
+                <label class="form-check-label" for="flexRadioDefault1">
+                    SI
+                </label>
+            </div>
+            <div class="mb-3">
+                <input class="form-check-input" type="radio" name="in_progress" id="flexRadioDefault2" value="0">
+                <label class="form-check-label" for="flexRadioDefault2">
+                    NO
+                </label>
+            </div>
 
-            <button type="submit" class="btn btn-primary mb-3">CREA</button>
+            <button type="submit" class="btn btn-primary mb-3 d-block">CREA</button>
         </form>
 
     </div>
